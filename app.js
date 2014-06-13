@@ -137,7 +137,7 @@ app.factory('MessageService', function() {
 
 
 //AccessService
-app.service('AccessService', function() {
+app.service('AccessService', ['ProfileService', function(ProfileService) {
 
   //TODO: Ask the ProfileService for the current user's access levels
   this.accessLevels = ['Manager', 'Subscriber', 'Marketer']
@@ -146,7 +146,7 @@ app.service('AccessService', function() {
     return this.accessLevels.indexOf(permission) !== -1;
   }
 
-})
+}])
 
 
 
