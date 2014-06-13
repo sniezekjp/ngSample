@@ -4,7 +4,7 @@
 
 
 //Init anuglar app, we'll be using ui.router in replace of ngRoute
-var app = angular.module('APP', ['ui.router', 'ngCookies', 'ngSanitize', 'ngAnimate']);
+var app = angular.module('APP', ['ui.router', 'ngCookies', 'ngSanitize', 'ngAnimate', 'ngResource']);
 
 
 
