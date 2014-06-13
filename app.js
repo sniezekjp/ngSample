@@ -135,15 +135,35 @@ app.factory('MessageService', function() {
 
 
 
+
+//AwesomeService
+app.service('Awesome', function() {
+
+  this.accessLevels = ['Manager', 'Subscriber', 'Marketer']
+  
+  this.is = function(value) {
+    return value === true
+  }
+
+  this.can = function(permission) {
+    return this.accessLevels.indexOf(permission) !== -1
+  }
+  
+})
+
+
+
+
 //This will display the messages in the MessageService using ng-repeat in a template
 app.directive('messages', ['MessageService', function(MessageService) {
   
   return {
     restrict: 'EA', 
-    templateUrl: '/some/template.html', 
+    templateUrl: '/some/template.html',
     link: function(scope, elm, attrs) {
       scope.messages = MessageService.messages;
-      //TODO: implement logic for displaying each message for 5 seconds..
+      //TODO: implement logic for displaying each message for 5 seconds..      
+
     }
   }
 
