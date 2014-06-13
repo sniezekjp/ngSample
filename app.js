@@ -136,14 +136,11 @@ app.factory('MessageService', function() {
 
 
 
-//AwesomeService
-app.service('Awesome', function() {
+//AccessService
+app.service('AccessService', function() {
 
+  //TODO: Ask the ProfileService for the current user's access levels
   this.accessLevels = ['Manager', 'Subscriber', 'Marketer']
-  
-  this.is = function(value) {
-    return value === true;
-  }
 
   this.can = function(permission) {
     return this.accessLevels.indexOf(permission) !== -1;
@@ -156,7 +153,6 @@ app.service('Awesome', function() {
 
 //This will display the messages in the MessageService using ng-repeat in a template
 app.directive('messages', ['MessageService', function(MessageService) {
-  
   return {
     restrict: 'EA', 
     templateUrl: '/some/template.html',
