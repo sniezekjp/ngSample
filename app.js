@@ -124,8 +124,8 @@ app.factory('MessageService', function() {
     
     //TODO: Append messages to an array, have a directive display each message for 5 seconds
     info: function(message) {
-      Message.messages.push(message)
-      alert(message)
+      Message.messages.push(message);
+      alert(message);
     }
   }
 
@@ -142,13 +142,13 @@ app.service('Awesome', function() {
   this.accessLevels = ['Manager', 'Subscriber', 'Marketer']
   
   this.is = function(value) {
-    return value === true
+    return value === true;
   }
 
   this.can = function(permission) {
-    return this.accessLevels.indexOf(permission) !== -1
+    return this.accessLevels.indexOf(permission) !== -1;
   }
-  
+
 })
 
 
@@ -176,6 +176,6 @@ app.directive('messages', ['MessageService', function(MessageService) {
 //usage {{ user.name | lowercase }}
 app.filter('lowercase', function() {
   return function(input) {
-    return input.toLowerCase()
+    return input.toLowerCase();
   }
 })
