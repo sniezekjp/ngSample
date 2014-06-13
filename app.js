@@ -153,6 +153,7 @@ app.directive('messages', ['MessageService', function(MessageService) {
 
 
 //Example filter
+//usage {{ user.name | lowercase }}
 app.filter('lowercase', function() {
   return function(input) {
     return input.toLowerCase()
